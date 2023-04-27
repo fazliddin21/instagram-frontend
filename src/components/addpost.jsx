@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import userpic from "../images/user.png";
 import addpost from "../images/addpost.svg";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export default function Addpost() {
+  const [user, setUser] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
@@ -13,7 +15,7 @@ export default function Addpost() {
 
   useEffect(() => {
     if (url) {
-      fetch("https://inst-back-production.up.railway.app//createPost", {
+      fetch("https://inst-back-production.up.railway.app/createPost", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +60,7 @@ export default function Addpost() {
 
   return (
     <div className="addpost">
-      <h2 style={{ margin: "10px auto" }}>Add New Post</h2>
+      <h2>Add New Post</h2>
       <form onSubmit={handleFormSubmit}>
         <textarea
           className="post-body"
@@ -68,11 +70,7 @@ export default function Addpost() {
         />
         <div className="image-upload">
           {image ? (
-            <img
-              className="output"
-              src={URL.createObjectURL(image)}
-              alt="Post"
-            />
+            <img className="output" src={URL.createObjectURL(image)} alt="Post" />
           ) : (
             <img className="output" src={addpost} alt="Add Post" />
           )}
