@@ -8,7 +8,7 @@ export default function PostDetail({ list, modalDetails }) {
   const notify = (msg, type) => toast[type](msg);
   const deletePost = (postId) => {
     if (window.confirm("Are you sure you want to delete this post")) {
-      fetch(`https://long-tan-shrimp-tam.cyclic.app/deletePost/${postId}`, {
+      fetch(`https://inst-back-production.up.railway.app/deletePost/${postId}`, {
         method: "delete",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("jwt"),

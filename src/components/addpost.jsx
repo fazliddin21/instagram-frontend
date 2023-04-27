@@ -13,7 +13,7 @@ export default function Addpost() {
 
   useEffect(() => {
     if (url) {
-      fetch("https://long-tan-shrimp-tam.cyclic.app/createPost", {
+      fetch("https://inst-back-production.up.railway.app//createPost", {
         method: "post",
         headers: {
           "Content-Type": "application/json",

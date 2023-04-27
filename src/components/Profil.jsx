@@ -32,7 +32,7 @@ export default function Profil() {
 
   useEffect(() => {
     fetch(
-      `https://long-tan-shrimp-tam.cyclic.app/user/${
+      `https://inst-back-production.up.railway.app/user/${
         JSON.parse(localStorage.getItem("user"))._id
       }`,
       {
